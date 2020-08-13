@@ -1,0 +1,17 @@
+<h1><%= @cocktail.name %></h1>
+
+<h3>Ingredients:</h3>
+<ul>
+  <% @ingredients.each do |i|  %>
+    <li><%= i.name %></li>
+  <% end %>
+</ul>
+
+
+<h3>Doses:</h3>
+<h3>Cocktail | Ingredient</h3>
+<ul>
+  <% @doses.each do |i|  %>
+    <li><%= Cocktail.find(i.cocktail_id).name %> | <%= Ingredient.find(i.ingredient_id).name %></li>
+  <% end %>
+</ul>
