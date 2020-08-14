@@ -13,5 +13,11 @@
 <ul>
   <% @doses.each do |i|  %>
     <li><%= Cocktail.find(i.cocktail_id).name %> | <%= Ingredient.find(i.ingredient_id).name %></li>
+    <%= link_to "Remove dose",
+                  dose_path(i),
+                  method: :delete%>
   <% end %>
 </ul>
+
+<%= link_to "Make a dose for this cocktail", new_cocktail_dose_path(@cocktail) %>
+<%= link_to "Go back", cocktails_path %>
