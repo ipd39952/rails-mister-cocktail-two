@@ -1,7 +1,8 @@
 <div class="d-flex flex-wrap justify-content-center">
   <% @cocktails.each do |c| %>
     <div class="card mx-3 my-3 px-2 py-2" style="width: 18rem;">
-      <img class="card-img-top" src="https://st.depositphotos.com/1686467/3099/i/450/depositphotos_30991219-stock-photo-drunk-man-fallen-asleep-on.jpg" alt="Card image cap">
+     <!--  <img class="c" src="https://st.depositphotos.com/1686467/3099/i/450/depositphotos_30991219-stock-photo-drunk-man-fallen-asleep-on.jpg" alt="Card image cap"> -->
+     <%= cl_image_tag c.photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top" %>
       <div class="card-body">
         <h5 class="card-title font-weight-bold"><%= "#{c.name}" %></h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -10,8 +11,5 @@
     </div>
   <% end %>
 </div>
-
-
-
 
 <%= link_to "Create a new cocktail" , new_cocktail_path %>
