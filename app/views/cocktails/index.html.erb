@@ -1,7 +1,17 @@
-<ul>
+<div class="d-flex flex-wrap justify-content-center">
   <% @cocktails.each do |c| %>
-    <li><%= link_to c.name, cocktail_path(c)%></li>
+    <div class="card mx-3 my-3 px-2 py-2" style="width: 18rem;">
+      <img class="card-img-top" src="https://st.depositphotos.com/1686467/3099/i/450/depositphotos_30991219-stock-photo-drunk-man-fallen-asleep-on.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title font-weight-bold"><%= "#{c.name}" %></h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <%= link_to "More info", cocktail_path(c)%>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
+
+
+
 
 <%= link_to "Create a new cocktail" , new_cocktail_path %>
